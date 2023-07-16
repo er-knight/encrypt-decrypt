@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons8-circular-arrow-16.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Encrypt - Decrypt</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="buttons-group-wrapper">
+            <div class="button-wrapper-large">
+                <button id="show-encryption-form">Encrypt</button>
+            </div>
+            <div class="button-wrapper-large">
+                <button id="show-decryption-form">Decrypt</button>
+            </div>
+        </div>
+        <div id="encryption-form-wrapper">
+            <form id="encryption-form">
+                <div class="textarea-wrapper">
+                    <label for="plaintext">Plaintext</label>
+                    <textarea id="plaintext" cols="60" rows="5"></textarea>
+                </div>
+                <div class="input-wrapper">
+                    <label for="encryption-password">Password</label>
+                    <input type="password" id="encryption-password" required>
+                </div>
+                <div id="button-wrapper">
+                    <button id="encrypt-button">Encrypt</button>
+                </div>
+            </form>
+        </div>
+        <div id="decryption-form-wrapper">
+            <form id="decryption-form">
+                <div class="textarea-wrapper">
+                    <label for="ciphertext">Ciphertext</label>
+                    <textarea id="ciphertext" cols="60" rows="5" required></textarea>
+                </div>
+                <div class="content-type-wrapper">
+                    <label for="content-type">Select Content Type</label>
+                    <select id="content-type">
+                        <option value="text" selected>Text</option>
+                        <option value="json">JSON</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <label for="decryption-password">Password</label>
+                    <input type="password" id="decryption-password" required>
+                </div>
+                <div id="button-wrapper">
+                    <button id="decrypt-button">Decrypt</button>
+                </div>
+            </form>
+        </div>
+        <div id="output-container-wrapper">
+            <label for="output-container" id="output-container-label"></label>
+            <textarea id="output-container" cols="60" rows="10" readonly></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
