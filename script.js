@@ -70,7 +70,7 @@ async function encryptWith_AES_GCM(plaintextBytes, passwordBytes) {
     const passwordKey = await crypto.subtle.importKey('raw', passwordBytes, { name: 'PBKDF2' }, false, ['deriveKey']);
     const salt = crypto.getRandomValues(new Uint8Array(16));
     const aesKey = await crypto.subtle.deriveKey(
-        { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+        { name: 'PBKDF2', salt, iterations: 480000, hash: 'SHA-256' },
         passwordKey,
         { name: 'AES-GCM', length: 256 },
         false,
@@ -103,7 +103,7 @@ async function decryptWith_AES_GCM(IVSaltCiphertextBytes, passwordBytes) {
     // Derive a key from the password using the retrieved salt
     const passwordKey = await crypto.subtle.importKey('raw', passwordBytes, { name: 'PBKDF2' }, false, ['deriveKey']);
     const aesKey = await crypto.subtle.deriveKey(
-        { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+        { name: 'PBKDF2', salt, iterations: 480000, hash: 'SHA-256' },
         passwordKey,
         { name: 'AES-GCM', length: 256 },
         false,
